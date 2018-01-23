@@ -13,11 +13,8 @@
         if (i < 0 || i > matrix.length-1) { return false }
         if (j < 0 || j > matrix[0].length-1) { return false }
 
-        var island = matrix[i][j] === WATER;
-        matrix[i][j] = ISLAND;
-
-        var visualizeSolution = root.SHRI_ISLANDS.visualizeSolution;
-        visualizeSolution;
+        var island = matrix[i][j] === ISLAND;
+        matrix[i][j] = WATER;
 
         if (island) {
             locateIsland(matrix, i, j + 1);
@@ -33,8 +30,6 @@
         var islandNum = 0;
 
         var matrix = JSON.parse(JSON.stringify(map));
-
-        matrix[0][0] = 3;
 
         for(var i=0; i < matrix.length; i++) {
             for(var j=0; j < matrix[0].length; j++) {
